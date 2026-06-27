@@ -6,7 +6,6 @@ import {
   timestamp,
   jsonb,
   pgEnum,
-  uniqueIndex,
 } from "drizzle-orm/pg-core";
 
 // ─── Enums ────────────────────────────────────────────────────────────────────
