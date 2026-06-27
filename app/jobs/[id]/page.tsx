@@ -7,9 +7,10 @@ import StatusUpdater from "@/components/jobs/StatusUpdater";
 export default async function JobDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const { job, match } = await getJobById(params.id);
+  const { id } = await params;
+  const { job, match } = await getJobById(id);
 
   if (!job) notFound();
 

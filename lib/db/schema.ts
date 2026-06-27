@@ -6,6 +6,7 @@ import {
   timestamp,
   jsonb,
   pgEnum,
+  uniqueIndex,
 } from "drizzle-orm/pg-core";
 
 // ─── Enums ────────────────────────────────────────────────────────────────────
@@ -68,7 +69,7 @@ export const myProfile = pgTable("my_profile", {
  */
 export const matches = pgTable("matches", {
   id: text("id").primaryKey(),
-  jobId: text("job_id").notNull().references(() => jobs.id),
+  jobId: text("job_id").notNull().references(() => jobs.id).unique(),
   score: integer("score").notNull(),           // 0-100
   scoreBreakdown: jsonb("score_breakdown").$type<{
     titleMatch: number;

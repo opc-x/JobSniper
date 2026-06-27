@@ -1,5 +1,4 @@
 import { getJobs } from "@/lib/actions/jobs";
-import { batchScore } from "@/lib/actions/match";
 import { scoreBg } from "@/lib/utils";
 import Link from "next/link";
 import BatchScoreButton from "@/components/jobs/BatchScoreButton";
