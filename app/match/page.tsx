@@ -3,6 +3,8 @@ import { scoreBg } from "@/lib/utils";
 import Link from "next/link";
 import BatchScoreButton from "@/components/jobs/BatchScoreButton";
 
+export const dynamic = "force-dynamic";
+
 export default async function MatchPage() {
   const jobs = await getJobs();
   const sorted = [...jobs].sort((a, b) => (b.score ?? 0) - (a.score ?? 0));

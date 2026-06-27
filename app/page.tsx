@@ -3,6 +3,8 @@ import { getProfile } from "@/lib/actions/profile";
 import JobCard from "@/components/jobs/JobCard";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const [jobs, profile] = await Promise.all([getJobs(), getProfile()]);
 

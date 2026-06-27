@@ -1,6 +1,8 @@
 import { getJobs } from "@/lib/actions/jobs";
 import JobCard from "@/components/jobs/JobCard";
 
+export const dynamic = "force-dynamic";
+
 export default async function JobsPage() {
   const jobs = await getJobs();
 

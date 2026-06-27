@@ -1,6 +1,8 @@
 import { getProfile } from "@/lib/actions/profile";
 import ProfileForm from "@/components/jobs/ProfileForm";
 
+export const dynamic = "force-dynamic";
+
 export default async function ProfilePage() {
   const profile = await getProfile();
 

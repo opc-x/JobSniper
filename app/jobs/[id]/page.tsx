@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import StatusUpdater from "@/components/jobs/StatusUpdater";
 
+export const dynamic = "force-dynamic";
+
 export default async function JobDetailPage({
   params,
 }: {
