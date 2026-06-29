@@ -1,7 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // PWA: add @ducanh2912/next-pwa back after first successful deploy
+  async headers() {
+    return [
+      {
+        source: "/api/:path*",
+        headers: [
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET, POST, OPTIONS" },
+          { key: "Access-Control-Allow-Headers", value: "Content-Type" },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
